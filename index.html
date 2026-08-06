@@ -38,21 +38,21 @@ footer { text-align:center; color:var(--mut); font-size:12px; padding:24px; }
 <body>
 <header>
   <h1>RC Nunes · Evolução da mídia paga</h1>
-  <div class="sub">Google Ads + Meta Ads · início do trabalho (mai/2026) → hoje · gerado em 06/08/2026 às 10:46</div>
+  <div class="sub">Google Ads + Meta Ads · início do trabalho (mai/2026) → hoje · gerado em 06/08/2026 às 11:00</div>
 </header>
 <div class="wrap">
 
   <div class="kpis">
-    <div class="kpi"><div class="n">196</div><div class="l">Contatos gerados no período<br>(formulários Google + conversas WhatsApp)</div></div>
-    <div class="kpi"><div class="n">7 → 87</div><div class="l">Contatos/mês: primeiro mês cheio → julho</div></div>
+    <div class="kpi"><div class="n">212</div><div class="l">Contatos gerados no período<br>(formulários Google + conversas WhatsApp)</div></div>
+    <div class="kpi"><div class="n">17 → 89</div><div class="l">Contatos/mês: primeiro mês cheio → julho</div></div>
     <div class="kpi"><div class="n">3,244 → 168,535</div><div class="l">Alcance Meta/mês (pessoas)</div></div>
-    <div class="kpi"><div class="n">R$ 20.969,50</div><div class="l">Investido total (Google + Meta)</div></div>
+    <div class="kpi"><div class="n">R$ 20.969,90</div><div class="l">Investido total (Google + Meta)</div></div>
   </div>
 
   <div class="card">
     <h2>Contatos gerados por mês</h2>
     <div class="desc">A métrica que mais importa: gente falando com a imobiliária. Soma dos leads de
-      formulário do Google com as conversas de WhatsApp iniciadas pelo Meta.</div>
+      formulário e ligações do Google com as conversas de WhatsApp iniciadas pelo Meta.</div>
     <div class="chart-box"><canvas id="cContatos"></canvas></div>
     <div class="note"><b>* Agosto é parcial</b> (só os 6 primeiros dias). No ritmo de agosto, o mês
       projeta ~150 contatos.</div>
@@ -65,18 +65,20 @@ footer { text-align:center; color:var(--mut); font-size:12px; padding:24px; }
       custo sob controle, enquanto os leads de formulário se mantiveram estáveis.</div>
     <div class="grid2">
       <div><h3>Tráfego (cliques e impressões)</h3><div class="chart-box"><canvas id="cGTraf"></canvas></div></div>
-      <div><h3>Investimento e CPA</h3><div class="chart-box"><canvas id="cGCusto"></canvas></div></div>
+      <div><h3>Conversões por tipo</h3><div class="chart-box"><canvas id="cGConv"></canvas></div></div>
     </div>
     <table>
-      <thead><tr><th>Mês</th><th>Investido</th><th>Cliques</th><th>Impressões</th>
-        <th>Leads form.</th><th>Clique Whats*</th><th>Custo/lead</th><th>CPA cru</th></tr></thead>
-      <tbody><tr><td>Mai</td><td>R$ 4.151.06</td><td>1.639</td><td>18.881</td><td><b>7</b></td><td>7</td><td>R$ 593,01</td><td>R$ 296,50</td></tr><tr><td>Jun</td><td>R$ 6.016.77</td><td>3.034</td><td>33.769</td><td><b>7</b></td><td>—</td><td>R$ 859,54</td><td>R$ 859,54</td></tr><tr><td>Jul</td><td>R$ 5.074.82</td><td>3.013</td><td>35.502</td><td><b>7</b></td><td>—</td><td>R$ 724,97</td><td>R$ 724,97</td></tr><tr><td>Ago*</td><td>R$ 1.936.41</td><td>941</td><td>10.597</td><td><b>3</b></td><td>—</td><td>R$ 645,47</td><td>R$ 645,47</td></tr></tbody>
+      <thead><tr><th>Mês</th><th>Investido</th><th>Cliques</th>
+        <th>Form. WhatsApp</th><th>Form. Imóvel</th><th>Ligações</th>
+        <th>Clique Whats*</th><th>Custo/lead form.</th></tr></thead>
+      <tbody><tr><td>Mai</td><td>R$ 4.151.06</td><td>1.639</td><td><b>4</b></td><td><b>3</b></td><td>10</td><td>9</td><td>R$ 593,01</td></tr><tr><td>Jun</td><td>R$ 6.016.77</td><td>3.034</td><td><b>4</b></td><td><b>3</b></td><td>—</td><td>—</td><td>R$ 859,54</td></tr><tr><td>Jul</td><td>R$ 5.074.82</td><td>3.013</td><td><b>7</b></td><td><b>0</b></td><td>2</td><td>—</td><td>R$ 724,97</td></tr><tr><td>Ago*</td><td>R$ 1.936.41</td><td>941</td><td><b>2</b></td><td><b>1</b></td><td>4</td><td>—</td><td>R$ 645,47</td></tr></tbody>
     </table>
-    <div class="note"><b>Por que o "CPA cru" parece subir e a conversão de maio parece maior:</b> em maio,
-      7 das 14 conversões eram a ação <i>"clique_whatsapp"</i> — um sinal fraco (só o clique no botão,
-      não um lead) que <b>parou de ser medido após a migração do Gerenciador de Tags (~13/05)</b>. Olhando
-      só o lead de formulário (contato identificável), o volume ficou estável em ~7/mês enquanto dobramos o
-      tráfego. O custo por lead de formulário é a leitura honesta da eficiência.</div>
+    <div class="note"><b>Sobre as conversões do Google:</b> os <b>formulários</b> (WhatsApp e Imóvel) são o
+      lead identificável e ficaram estáveis enquanto dobramos o tráfego. As <b>ligações</b> vêm da extensão
+      de chamada do anúncio. O <i>"clique WhatsApp"</i> é uma conversão <b>secundária</b> (só o clique no
+      botão, não um lead) que <b>só registrou em maio e parou após a migração do Gerenciador de Tags (~13/05)</b>
+      — por isso maio, no número cru, parecia ter mais conversão. O custo por lead de formulário é a leitura
+      honesta da eficiência.</div>
   </div>
 
   <div class="card">
@@ -90,7 +92,7 @@ footer { text-align:center; color:var(--mut); font-size:12px; padding:24px; }
     <table>
       <thead><tr><th>Mês</th><th>Investido</th><th>Alcance</th><th>Impressões</th>
         <th>Cliques</th><th>CPC</th><th>Conversas WhatsApp</th></tr></thead>
-      <tbody><tr><td>Mai</td><td>R$ 154.42</td><td>3.244</td><td>5.439</td><td>165</td><td>R$ 0,94</td><td><b>0</b></td></tr><tr><td>Jun</td><td>R$ 1.113.58</td><td>62.892</td><td>123.637</td><td>1.575</td><td>R$ 0,71</td><td><b>65</b></td></tr><tr><td>Jul</td><td>R$ 2.146.70</td><td>168.535</td><td>506.550</td><td>2.927</td><td>R$ 0,73</td><td><b>80</b></td></tr><tr><td>Ago*</td><td>R$ 375.74</td><td>51.218</td><td>85.854</td><td>406</td><td>R$ 0,93</td><td><b>27</b></td></tr></tbody>
+      <tbody><tr><td>Mai</td><td>R$ 154.42</td><td>3.244</td><td>5.439</td><td>165</td><td>R$ 0,94</td><td><b>0</b></td></tr><tr><td>Jun</td><td>R$ 1.113.58</td><td>62.892</td><td>123.637</td><td>1.575</td><td>R$ 0,71</td><td><b>65</b></td></tr><tr><td>Jul</td><td>R$ 2.146.70</td><td>168.535</td><td>506.550</td><td>2.927</td><td>R$ 0,73</td><td><b>80</b></td></tr><tr><td>Ago*</td><td>R$ 376.14</td><td>51.286</td><td>85.992</td><td>406</td><td>R$ 0,93</td><td><b>27</b></td></tr></tbody>
     </table>
   </div>
 
@@ -98,7 +100,7 @@ footer { text-align:center; color:var(--mut); font-size:12px; padding:24px; }
 <footer>ADXP · painel de evolução gerado a partir das contas Google Ads e Meta Ads do RC Nunes</footer>
 
 <script>
-const D = {"labels": ["Mai", "Jun", "Jul", "Ago*"], "contatos_g": [7, 7, 7, 3], "contatos_m": [0, 65, 80, 27], "g_clicks": [1639, 3034, 3013, 941], "g_impr": [18881, 33769, 35502, 10597], "g_cost": [4151, 6017, 5075, 1936], "g_cpa": [297, 860, 725, 645], "m_reach": [3244, 62892, 168535, 51218], "m_impr": [5439, 123637, 506550, 85854], "m_spend": [154, 1114, 2147, 376]};
+const D = {"labels": ["Mai", "Jun", "Jul", "Ago*"], "contatos_g": [7, 7, 7, 3], "contatos_lig": [10, 0, 2, 4], "contatos_m": [0, 65, 80, 27], "g_form_wa": [4, 4, 7, 2], "g_form_im": [3, 3, 0, 1], "g_weak": [9, 0, 0, 0], "g_calls": [10, 0, 2, 4], "g_clicks": [1639, 3034, 3013, 941], "g_impr": [18881, 33769, 35502, 10624], "m_reach": [3244, 62892, 168535, 51286], "m_impr": [5439, 123637, 506550, 85992], "m_spend": [154, 1114, 2147, 376]};
 const AZUL="#0d3b66", VERDE="#25D366", AMARELO="#f4a300", ROXO="#7a2ea8", CINZA="#c3c9d4";
 Chart.defaults.font.family = "-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif";
 Chart.defaults.plugins.legend.labels.boxWidth = 12;
@@ -106,6 +108,7 @@ const money = v => "R$ " + v.toLocaleString("pt-BR");
 
 new Chart(cContatos, { type:"bar", data:{ labels:D.labels, datasets:[
   { label:"Formulários (Google)", data:D.contatos_g, backgroundColor:AZUL },
+  { label:"Ligações (Google)", data:D.contatos_lig, backgroundColor:AMARELO },
   { label:"Conversas WhatsApp (Meta)", data:D.contatos_m, backgroundColor:VERDE } ]},
   options:{ responsive:true, maintainAspectRatio:false,
     scales:{ x:{stacked:true}, y:{stacked:true, beginAtZero:true} } } });
@@ -117,12 +120,13 @@ new Chart(cGTraf, { type:"line", data:{ labels:D.labels, datasets:[
     scales:{ y:{position:"left", beginAtZero:true, title:{display:true,text:"Cliques"}},
              y1:{position:"right", beginAtZero:true, grid:{drawOnChartArea:false}, title:{display:true,text:"Impressões"}} } } });
 
-new Chart(cGCusto, { data:{ labels:D.labels, datasets:[
-  { type:"bar", label:"Investido", data:D.g_cost, backgroundColor:"#9db8d6", yAxisID:"y" },
-  { type:"line", label:"CPA cru", data:D.g_cpa, borderColor:AMARELO, backgroundColor:AMARELO, tension:.3, yAxisID:"y1" } ]},
+new Chart(cGConv, { type:"bar", data:{ labels:D.labels, datasets:[
+  { label:"Form. WhatsApp", data:D.g_form_wa, backgroundColor:AZUL },
+  { label:"Form. Imóvel", data:D.g_form_im, backgroundColor:"#5b8bc4" },
+  { label:"Ligações", data:D.g_calls, backgroundColor:AMARELO },
+  { label:"Clique WhatsApp (secundária)", data:D.g_weak, backgroundColor:CINZA } ]},
   options:{ responsive:true, maintainAspectRatio:false,
-    scales:{ y:{position:"left", beginAtZero:true, ticks:{callback:money}},
-             y1:{position:"right", beginAtZero:true, grid:{drawOnChartArea:false}, ticks:{callback:money}} } } });
+    scales:{ x:{stacked:true}, y:{stacked:true, beginAtZero:true} } } });
 
 new Chart(cMAlc, { type:"line", data:{ labels:D.labels, datasets:[
   { label:"Alcance (pessoas)", data:D.m_reach, borderColor:ROXO, backgroundColor:ROXO, tension:.3, yAxisID:"y" },
