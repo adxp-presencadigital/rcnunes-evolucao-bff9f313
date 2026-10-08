@@ -2,7 +2,7 @@
 <html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>RC Nunes · Evolução da mídia (mai–set 2026)</title>
+<title>RC Nunes · Evolução da mídia (mai-out 2026)</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 :root { --azul:#0d3b66; --verde:#25D366; --amarelo:#f4a300; --bg:#f5f6f8; --card:#fff;
@@ -33,20 +33,27 @@ th { color:var(--mut); font-weight:600; font-size:12px; }
 .tag { display:inline-block; font-size:11px; font-weight:700; padding:2px 9px; border-radius:999px; }
 .tag.g { color:#0d3b66; background:#e7f0fb; }
 .tag.m { color:#7a2ea8; background:#f3e8fb; }
+.seg { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0 4px; }
+.seg button { border:1px solid var(--line); background:#fff; color:var(--txt); border-radius:999px;
+  padding:5px 12px; font-size:12.5px; cursor:pointer; font-family:inherit; }
+.seg button.on { background:var(--azul); color:#fff; border-color:var(--azul); }
+.tscroll { overflow-x:auto; }
+tr.tot td { font-weight:700; border-top:2px solid var(--line); }
+td.zero { color:var(--mut); }
 footer { text-align:center; color:var(--mut); font-size:12px; padding:24px; }
 </style></head>
 <body>
 <header>
   <h1>RC Nunes · Evolução da mídia paga</h1>
-  <div class="sub">Google Ads + Meta Ads · início do trabalho (mai/2026) → 02/09 · gerado em 03/09/2026 às 08:46</div>
+  <div class="sub">Google Ads + Meta Ads · início do trabalho (mai/2026) até 07/10 · gerado em 08/10/2026 às 10:53</div>
 </header>
 <div class="wrap">
 
   <div class="kpis">
-    <div class="kpi"><div class="n">399</div><div class="l">Contatos gerados no período<br>(formulários Google + conversas WhatsApp)</div></div>
-    <div class="kpi"><div class="n">17 → 205</div><div class="l">Contatos no mês: maio → agosto</div></div>
-    <div class="kpi"><div class="n">3,244 → 173,929</div><div class="l">Alcance Meta/mês (pessoas)</div></div>
-    <div class="kpi"><div class="n">R$ 27.533,89</div><div class="l">Investido total (Google + Meta)</div></div>
+    <div class="kpi"><div class="n">575</div><div class="l">Contatos gerados no período<br>(formulários e ligações Google + conversas WhatsApp Meta)</div></div>
+    <div class="kpi"><div class="n">7 → 41</div><div class="l">Formulários do Google no mês<br>maio → setembro</div></div>
+    <div class="kpi"><div class="n">R$ 593 → R$ 125</div><div class="l">Custo por formulário do Google<br>maio → setembro</div></div>
+    <div class="kpi"><div class="n">R$ 36.140,00</div><div class="l">Investido total (Google + Meta)</div></div>
   </div>
 
   <div class="card">
@@ -54,16 +61,18 @@ footer { text-align:center; color:var(--mut); font-size:12px; padding:24px; }
     <div class="desc">A métrica que mais importa: gente falando com a imobiliária. Soma dos leads de
       formulário e ligações do Google com as conversas de WhatsApp iniciadas pelo Meta.</div>
     <div class="chart-box"><canvas id="cContatos"></canvas></div>
-    <div class="note"><b>Agosto foi o melhor mês do período: 205 contatos</b>, contra 89 em julho —
-      com investimento praticamente igual. <b>* Setembro é parcial</b> (só os 2 primeiros dias), a barra
-      pequena é o recorte, não queda.</div>
+    <div class="note"><b>Setembro somou 155 contatos</b>, abaixo de agosto (206). A diferença veio
+      das conversas do Meta (147 → 92), que reduzimos de propósito (explicado abaixo).
+      Os <b>formulários do Google</b>, que são o contato identificado, subiram de 32 para <b>41</b>.
+      <br><b>* Outubro é parcial</b> (1 a 07/10): a barra menor é o recorte do mês, não queda. Só nesses
+      dias já são <b>22 formulários</b> do Google.</div>
   </div>
 
   <div class="card">
-    <h2><span class="tag g">Google Ads</span> &nbsp;Busca — quem procura por imóvel</h2>
-    <div class="desc">O tráfego mais que dobrou no período (cliques 1,639 → 4,077 por mês) e em
-      agosto os leads de formulário finalmente acompanharam: de 7 em julho para <b>31</b>,
-      com o custo por lead caindo de R$ 724,97 para <b>R$ 197,97</b>.</div>
+    <h2><span class="tag g">Google Ads</span> &nbsp;Busca: quem procura por imóvel</h2>
+    <div class="desc">De maio a julho os formulários ficaram em torno de 7 por mês. Em agosto foram 32
+      e em setembro <b>41</b>, com o custo por formulário caindo de R$ 563,87 em julho para
+      <b>R$ 124,77</b>. Em outubro, até 07/10: 22 formulários a R$ 67,08 cada.</div>
     <div class="grid2">
       <div><h3>Tráfego (cliques e impressões)</h3><div class="chart-box"><canvas id="cGTraf"></canvas></div></div>
       <div><h3>Conversões por tipo</h3><div class="chart-box"><canvas id="cGConv"></canvas></div></div>
@@ -72,26 +81,44 @@ footer { text-align:center; color:var(--mut); font-size:12px; padding:24px; }
       <thead><tr><th>Mês</th><th>Investido</th><th>Cliques</th>
         <th>Form. WhatsApp</th><th>Form. Imóvel</th><th>Ligações</th>
         <th>Clique Whats*</th><th>Custo/lead form.</th></tr></thead>
-      <tbody><tr><td>Mai</td><td>R$ 4.151.06</td><td>1.639</td><td><b>4</b></td><td><b>3</b></td><td>10</td><td>9</td><td>R$ 593,01</td></tr><tr><td>Jun</td><td>R$ 6.016.77</td><td>3.034</td><td><b>4</b></td><td><b>3</b></td><td>—</td><td>—</td><td>R$ 859,54</td></tr><tr><td>Jul</td><td>R$ 5.074.82</td><td>3.013</td><td><b>7</b></td><td><b>0</b></td><td>2</td><td>—</td><td>R$ 724,97</td></tr><tr><td>Ago</td><td>R$ 6.136.96</td><td>4.077</td><td><b>19</b></td><td><b>12</b></td><td>27</td><td>—</td><td>R$ 197,97</td></tr><tr><td>Set*</td><td>R$ 166.85</td><td>165</td><td><b>1</b></td><td><b>0</b></td><td>1</td><td>—</td><td>R$ 166,85</td></tr></tbody>
+      <tbody><tr><td>Mai</td><td>R$ 4.151,06</td><td>1.639</td><td><b>4</b></td><td><b>3</b></td><td>10</td><td>9</td><td>R$ 593,01</td></tr><tr><td>Jun</td><td>R$ 6.016,77</td><td>3.034</td><td><b>4</b></td><td><b>3</b></td><td>-</td><td>-</td><td>R$ 859,54</td></tr><tr><td>Jul</td><td>R$ 5.074,82</td><td>3.013</td><td><b>8</b></td><td><b>1</b></td><td>2</td><td>-</td><td>R$ 563,87</td></tr><tr><td>Ago</td><td>R$ 6.136,96</td><td>4.077</td><td><b>20</b></td><td><b>12</b></td><td>27</td><td>-</td><td>R$ 191,78</td></tr><tr><td>Set</td><td>R$ 5.115,50</td><td>3.509</td><td><b>34</b></td><td><b>7</b></td><td>22</td><td>-</td><td>R$ 124,77</td></tr><tr><td>Out*</td><td>R$ 1.475,77</td><td>861</td><td><b>18</b></td><td><b>4</b></td><td>8</td><td>-</td><td>R$ 67,08</td></tr></tbody>
     </table>
     <div class="note"><b>Sobre as conversões do Google:</b> os <b>formulários</b> (WhatsApp e Imóvel) são o
-      lead identificável e ficaram estáveis enquanto dobramos o tráfego. As <b>ligações</b> vêm da extensão
+      lead identificável: chegam com nome e telefone. As <b>ligações</b> vêm da extensão
       de chamada do anúncio. O <i>"clique WhatsApp"</i> é uma conversão <b>secundária</b> (só o clique no
-      botão, não um lead) que <b>só registrou em maio e parou após a migração do Gerenciador de Tags (~13/05)</b>
-      — por isso maio, no número cru, parecia ter mais conversão. O custo por lead de formulário é a leitura
+      botão, não um lead) que <b>só registrou em maio e parou após a migração do Gerenciador de Tags (~13/05)</b>.
+      Por isso maio, no número cru, parecia ter mais conversão. O custo por lead de formulário é a leitura
       honesta da eficiência.</div>
-    <div class="note"><b>De onde veio o salto de agosto:</b> boa parte (17 dos 31 formulários e
-      26 das 27 ligações) veio da campanha nova de IA do Google, ligada no fim de julho,
-      com R$ 556,74 de investimento no mês. É o melhor resultado da conta em volume, mas é também o formato em
-      que o Google tem mais liberdade para escolher a busca — <b>precisamos da sua leitura sobre a qualidade
-      desses contatos</b> antes de colocar mais verba nele.</div>
+    <div class="note"><b>De onde vem o resultado:</b> em setembro, 31 dos 41 formulários e
+      21 das 22 ligações vieram da campanha de IA do Google, com R$ 1.331,61 investidos no mês.
+      As buscas que mais trouxeram contato foram genéricas ("imobiliária belo horizonte", "imobiliárias bh",
+      "imobiliária savassi"), não o nome da RC Nunes. Por isso, em 01/10, concentramos nela a maior parte da
+      verba do Google. É também o formato em que o Google tem mais liberdade para escolher a busca:
+      <b>precisamos da leitura de vocês sobre a qualidade desses contatos</b>.</div>
   </div>
 
   <div class="card">
-    <h2><span class="tag m">Meta Ads</span> &nbsp;Instagram / Facebook — presença e conversas</h2>
-    <div class="desc">A frente que mais cresceu: de ~3 mil para ~174 mil pessoas alcançadas por mês, e as conversas
-      de WhatsApp saíram do zero para <b>147 em agosto</b> (80 em julho) — com
-      R$ 2,417 investidos no mês.</div>
+    <h2><span class="tag g">Google Ads</span> &nbsp;Desempenho por campanha</h2>
+    <div class="desc">Cada frente do Google reunida numa linha: as versões que buscam clique e as que buscam
+      conversão da mesma campanha estão somadas.</div>
+    <div class="chart-box"><canvas id="cGCamp"></canvas></div>
+    <div class="seg" id="segCamp"></div>
+    <div class="tscroll"><table id="tCamp"></table></div>
+    <div class="note"><b>Como ler:</b> <b>IA do Google</b> é a campanha em que o Google escolhe as buscas a partir
+      do site; <b>Bairros</b> são buscas por imóvel em bairros específicos; <b>Genéricos</b> são buscas como
+      "imobiliária em BH". Formulário é o contato que chega com nome e telefone.</div>
+
+    <h3 style="margin-top:28px">Bairros: desempenho por grupo de anúncio</h3>
+    <div class="desc">Os grupos da campanha de Bairros, um por bairro.</div>
+    <div class="seg" id="segBair"></div>
+    <div class="tscroll"><table id="tBair"></table></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="tag m">Meta Ads</span> &nbsp;Instagram / Facebook: presença e conversas</h2>
+    <div class="desc">O alcance saiu de ~3 mil para mais de 140 mil pessoas por mês, e as conversas de WhatsApp
+      chegaram a 147 em agosto e 92 em setembro. Em outubro o volume caiu porque
+      tiramos verba daqui (nota abaixo).</div>
     <div class="grid2">
       <div><h3>Alcance e impressões</h3><div class="chart-box"><canvas id="cMAlc"></canvas></div></div>
       <div><h3>Conversas de WhatsApp iniciadas</h3><div class="chart-box"><canvas id="cMConv"></canvas></div></div>
@@ -99,35 +126,41 @@ footer { text-align:center; color:var(--mut); font-size:12px; padding:24px; }
     <table>
       <thead><tr><th>Mês</th><th>Investido</th><th>Alcance</th><th>Impressões</th>
         <th>Cliques</th><th>CPC</th><th>Conversas WhatsApp</th></tr></thead>
-      <tbody><tr><td>Mai</td><td>R$ 154.42</td><td>3.244</td><td>5.439</td><td>165</td><td>R$ 0,94</td><td><b>0</b></td></tr><tr><td>Jun</td><td>R$ 1.113.58</td><td>62.892</td><td>123.637</td><td>1.575</td><td>R$ 0,71</td><td><b>65</b></td></tr><tr><td>Jul</td><td>R$ 2.146.70</td><td>168.535</td><td>506.550</td><td>2.927</td><td>R$ 0,73</td><td><b>80</b></td></tr><tr><td>Ago</td><td>R$ 2.417.14</td><td>173.929</td><td>408.873</td><td>2.267</td><td>R$ 1,07</td><td><b>147</b></td></tr><tr><td>Set*</td><td>R$ 155.59</td><td>20.880</td><td>27.272</td><td>148</td><td>R$ 1,05</td><td><b>14</b></td></tr></tbody>
+      <tbody><tr><td>Mai</td><td>R$ 154,42</td><td>3.244</td><td>5.439</td><td>165</td><td>R$ 0,94</td><td><b>0</b></td></tr><tr><td>Jun</td><td>R$ 1.113,58</td><td>62.892</td><td>123.637</td><td>1.575</td><td>R$ 0,71</td><td><b>65</b></td></tr><tr><td>Jul</td><td>R$ 2.146,70</td><td>168.535</td><td>506.550</td><td>2.927</td><td>R$ 0,73</td><td><b>80</b></td></tr><tr><td>Ago</td><td>R$ 2.417,14</td><td>173.929</td><td>408.873</td><td>2.267</td><td>R$ 1,07</td><td><b>147</b></td></tr><tr><td>Set</td><td>R$ 2.023,62</td><td>142.275</td><td>320.929</td><td>1.368</td><td>R$ 1,48</td><td><b>92</b></td></tr><tr><td>Out*</td><td>R$ 313,66</td><td>47.713</td><td>75.920</td><td>216</td><td>R$ 1,45</td><td><b>4</b></td></tr></tbody>
     </table>
-    <div class="note"><b>Sobre a qualidade das conversas:</b> ao abrir as conversas de agosto por perfil,
-      a maior parte vinha de público com <b>65 anos ou mais</b> e de Stories do Instagram — volume alto,
-      intenção baixa. Isso explica a sensação de "muita conversa que não vira visita". Em 01/09 cortamos
-      essa faixa e o Facebook, e separamos os orçamentos: a tendência é o número de conversas cair e a
-      qualidade subir. É de propósito.</div>
+    <div class="note"><b>Por que o Meta diminuiu em outubro:</b> conversa iniciada no WhatsApp conta qualquer
+      toque, mesmo de quem não tem perfil de compra. Em setembro a maior parte vinha do remarketing, que fala com
+      quem já conhece a RC Nunes e rendia mais locação, enquanto o que faltava era <b>venda</b>. Em 01/10 levamos
+      a verba para o Google, onde o contato chega por formulário, e deixamos no Meta a presença de marca e o
+      remarketing com verba mínima.
+      <br>O número de outubro ainda pode subir um pouco: o Meta atribui a conversa até 7 dias depois do anúncio.</div>
+    <div class="note"><b>Sobre a qualidade das conversas:</b> em agosto a maior parte vinha de público com
+      <b>65 anos ou mais</b> e de Stories do Instagram, volume alto e intenção baixa. Em 01/09 cortamos essa
+      faixa e o Facebook.</div>
   </div>
 
   <div class="card">
     <h2>O que mudou desde a última conversa</h2>
-    <div class="desc">Ajustes feitos entre a reunião anterior e hoje, e o que esperamos de cada um.</div>
+    <div class="desc">Ajustes feitos desde a reunião de 03/09 e o motivo de cada um.</div>
     <table>
       <thead><tr><th>Ajuste</th><th style="text-align:left">Por quê / o que esperar</th></tr></thead>
       <tbody>
+        <tr><td style="white-space:nowrap"><b>Verba do Google para a campanha de IA</b> (15 e 16/09)</td>
+            <td style="text-align:left">Em agosto ela trouxe metade das conversões com 9% da verba e estava travada
+            no orçamento. Subimos de R$ 20 para R$ 75/dia e limitamos o custo por clique da campanha de Bairros,
+            que pagava caro por posição sem converter.</td></tr>
+        <tr><td style="white-space:nowrap"><b>Prospecção do catálogo de volta</b> (15/09)</td>
+            <td style="text-align:left">Conjunto do catálogo que fala com público novo religado a R$ 10/dia,
+            para voltar a entrar gente que ainda não conhece a RC Nunes.</td></tr>
+        <tr><td style="white-space:nowrap"><b>Orçamento de outubro dentro dos R$ 7.000</b> (01/10)</td>
+            <td style="text-align:left">O ritmo do fim de setembro passaria do teto num mês cheio. Google ficou
+            em R$ 185/dia, a maior parte na campanha de IA. Meta ficou em ~R$ 41/dia: marca no mínimo que o
+            Meta permite, remarketing e catálogo a R$ 10 cada.</td></tr>
         <tr><td style="white-space:nowrap"><b>Corte de 65+ e Facebook</b> (01/09)</td>
-            <td style="text-align:left">Era a origem da maior parte das conversas de baixa intenção.
-            Menos conversas, mais gente com perfil de compra.</td></tr>
-        <tr><td style="white-space:nowrap"><b>Orçamento separado por campanha</b> (01/09)</td>
-            <td style="text-align:left">O orçamento único estava afogando o remarketing (R$ 17 contra R$ 825
-            no mês). Agora cada frente tem verba própria.</td></tr>
-        <tr><td style="white-space:nowrap"><b>6 reels do perfil impulsionados</b></td>
-            <td style="text-align:left">Conteúdo que já performa organicamente virando mídia: alcance
-            mais barato e prova social real.</td></tr>
-        <tr><td style="white-space:nowrap"><b>4 artes novas no remarketing</b></td>
-            <td style="text-align:left">Combate ao desgaste do criativo em quem já visitou o site.</td></tr>
-        <tr><td style="white-space:nowrap"><b>Catálogo de imóveis</b></td>
-            <td style="text-align:left">Hoje o catálogo cobre 722 dos 1.812 imóveis do site e 89% das
-            impressões estão em 2 anúncios. Ampliar a cobertura é a próxima frente.</td></tr>
+            <td style="text-align:left">Era a origem da maior parte das conversas de baixa intenção.</td></tr>
+        <tr><td style="white-space:nowrap"><b>Próxima frente: catálogo de imóveis</b></td>
+            <td style="text-align:left">Hoje o catálogo cobre 722 dos 1.812 imóveis do site e quase todas as
+            impressões ficam em 2 anúncios. Ampliar a cobertura depende do feed do site.</td></tr>
       </tbody>
     </table>
   </div>
@@ -136,7 +169,7 @@ footer { text-align:center; color:var(--mut); font-size:12px; padding:24px; }
 <footer>ADXP · painel de evolução gerado a partir das contas Google Ads e Meta Ads do RC Nunes</footer>
 
 <script>
-const D = {"labels": ["Mai", "Jun", "Jul", "Ago", "Set*"], "contatos_g": [7, 7, 7, 31, 1], "contatos_lig": [10, 0, 2, 27, 1], "contatos_m": [0, 65, 80, 147, 14], "g_form_wa": [4, 4, 7, 19, 1], "g_form_im": [3, 3, 0, 12, 0], "g_weak": [9, 0, 0, 0, 0], "g_calls": [10, 0, 2, 27, 1], "g_clicks": [1639, 3034, 3013, 4077, 165], "g_impr": [18881, 33769, 35502, 55052, 2418], "m_reach": [3244, 62892, 168535, 173929, 20880], "m_impr": [5439, 123637, 506550, 408873, 27272], "m_spend": [154, 1114, 2147, 2417, 156]};
+const D = {"labels": ["Mai", "Jun", "Jul", "Ago", "Set", "Out*"], "contatos_g": [7, 7, 9, 32, 41, 22], "contatos_lig": [10, 0, 2, 27, 22, 8], "contatos_m": [0, 65, 80, 147, 92, 4], "g_form_wa": [4, 4, 8, 20, 34, 18], "g_form_im": [3, 3, 1, 12, 7, 4], "g_weak": [9, 0, 0, 0, 0, 0], "g_calls": [10, 0, 2, 27, 22, 8], "g_clicks": [1639, 3034, 3013, 4077, 3509, 861], "g_impr": [18881, 33769, 35502, 55052, 43573, 10148], "m_reach": [3244, 62892, 168535, 173929, 142275, 47713], "m_impr": [5439, 123637, 506550, 408873, 320929, 75920], "m_spend": [154, 1114, 2147, 2417, 2024, 314], "months": ["2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10"], "camp": {"Campanhas antigas (desligadas)": {"2026-05": {"cost": 782.67, "clicks": 544, "calls": 4, "forms": 2.0}}, "Bairros": {"2026-05": {"cost": 3368.39, "clicks": 1095, "calls": 6, "forms": 5.0}, "2026-06": {"cost": 4019.17, "clicks": 1389, "calls": 0, "forms": 3.5}, "2026-07": {"cost": 3718.65, "clicks": 1720, "calls": 0, "forms": 5.0}, "2026-08": {"cost": 3017.29, "clicks": 1618, "calls": 0, "forms": 9.0}, "2026-09": {"cost": 2481.44, "clicks": 1385, "calls": 0, "forms": 6.0}, "2026-10": {"cost": 319.15, "clicks": 221, "calls": 0, "forms": 3.0}}, "Gen\u00e9ricos": {"2026-06": {"cost": 1997.59, "clicks": 1645, "calls": 0, "forms": 3.5}, "2026-07": {"cost": 1325.41, "clicks": 1260, "calls": 1, "forms": 3.0}, "2026-08": {"cost": 2562.93, "clicks": 1932, "calls": 1, "forms": 6.0}, "2026-09": {"cost": 1302.45, "clicks": 1168, "calls": 1, "forms": 4.0}, "2026-10": {"cost": 324.65, "clicks": 188, "calls": 1, "forms": 4.0}}, "IA do Google": {"2026-07": {"cost": 30.76, "clicks": 33, "calls": 1, "forms": 0.0}, "2026-08": {"cost": 556.74, "clicks": 527, "calls": 26, "forms": 17.0}, "2026-09": {"cost": 1331.61, "clicks": 956, "calls": 21, "forms": 31.0}, "2026-10": {"cost": 831.96, "clicks": 452, "calls": 7, "forms": 15.0}}}, "bair": {"Santo Agostinho": {"2026-05": {"cost": 45.68, "clicks": 19, "calls": 0, "forms": 0.0}}, "Santo Ant\u00f4nio": {"2026-05": {"cost": 104.56, "clicks": 45, "calls": 0, "forms": 0.0}, "2026-07": {"cost": 439.0, "clicks": 185, "calls": 0, "forms": 0.5}, "2026-08": {"cost": 482.56, "clicks": 270, "calls": 0, "forms": 1.0}, "2026-09": {"cost": 470.81, "clicks": 251, "calls": 0, "forms": 1.0}, "2026-10": {"cost": 59.71, "clicks": 40, "calls": 0, "forms": 1.0}}, "Lourdes": {"2026-05": {"cost": 1179.1, "clicks": 356, "calls": 4, "forms": 4.0}, "2026-06": {"cost": 2330.66, "clicks": 803, "calls": 0, "forms": 2.5}, "2026-07": {"cost": 1333.6, "clicks": 665, "calls": 0, "forms": 1.0}, "2026-08": {"cost": 930.38, "clicks": 500, "calls": 0, "forms": 0.0}, "2026-09": {"cost": 799.84, "clicks": 445, "calls": 0, "forms": 5.0}, "2026-10": {"cost": 121.78, "clicks": 92, "calls": 0, "forms": 1.0}}, "Funcion\u00e1rios": {"2026-05": {"cost": 746.31, "clicks": 226, "calls": 2, "forms": 0.0}}, "Sion": {"2026-05": {"cost": 101.41, "clicks": 42, "calls": 0, "forms": 0.0}, "2026-07": {"cost": 709.55, "clicks": 277, "calls": 0, "forms": 3.5}, "2026-08": {"cost": 514.84, "clicks": 233, "calls": 0, "forms": 3.0}, "2026-09": {"cost": 356.32, "clicks": 178, "calls": 0, "forms": 0.0}, "2026-10": {"cost": 55.29, "clicks": 31, "calls": 0, "forms": 1.0}}, "Serra": {"2026-05": {"cost": 265.46, "clicks": 83, "calls": 0, "forms": 0.5}}, "Savassi": {"2026-05": {"cost": 837.78, "clicks": 275, "calls": 0, "forms": 0.0}, "2026-06": {"cost": 1688.51, "clicks": 586, "calls": 0, "forms": 1.0}, "2026-07": {"cost": 1080.26, "clicks": 527, "calls": 0, "forms": 0.0}, "2026-08": {"cost": 925.42, "clicks": 512, "calls": 0, "forms": 3.0}, "2026-09": {"cost": 668.52, "clicks": 402, "calls": 0, "forms": 0.0}, "2026-10": {"cost": 62.37, "clicks": 46, "calls": 0, "forms": 0.0}}, "Luxemburgo": {"2026-07": {"cost": 156.25, "clicks": 66, "calls": 0, "forms": 0.0}, "2026-08": {"cost": 164.08, "clicks": 103, "calls": 0, "forms": 2.0}, "2026-09": {"cost": 185.96, "clicks": 109, "calls": 0, "forms": 0.0}, "2026-10": {"cost": 20.0, "clicks": 12, "calls": 0, "forms": 0.0}}, "Gutierrez": {"2026-05": {"cost": 88.09, "clicks": 49, "calls": 0, "forms": 0.5}}}, "camp_ordem": ["IA do Google", "Bairros", "Gen\u00e9ricos", "Campanhas antigas (desligadas)"]};
 const AZUL="#0d3b66", VERDE="#25D366", AMARELO="#f4a300", ROXO="#7a2ea8", CINZA="#c3c9d4";
 Chart.defaults.font.family = "-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif";
 Chart.defaults.plugins.legend.labels.boxWidth = 12;
@@ -170,6 +203,47 @@ new Chart(cMAlc, { type:"line", data:{ labels:D.labels, datasets:[
   options:{ responsive:true, maintainAspectRatio:false,
     scales:{ y:{position:"left", beginAtZero:true, title:{display:true,text:"Alcance"}},
              y1:{position:"right", beginAtZero:true, grid:{drawOnChartArea:false}, title:{display:true,text:"Impressões"}} } } });
+
+const CORES_CAMP = {"IA do Google":AZUL, "Bairros":"#5b8bc4", "Genéricos":AMARELO, "Campanhas antigas (desligadas)":CINZA};
+new Chart(cGCamp, { type:"bar", data:{ labels:D.labels, datasets:D.camp_ordem.map(c => ({
+  label:c, backgroundColor:CORES_CAMP[c],
+  data:D.months.map(m => (D.camp[c][m]||{}).forms||0) })) },
+  options:{ responsive:true, maintainAspectRatio:false,
+    plugins:{ title:{display:true, text:"Formulários por campanha"} },
+    scales:{ x:{stacked:true}, y:{stacked:true, beginAtZero:true} } } });
+
+const brl = v => v.toLocaleString("pt-BR", {style:"currency", currency:"BRL"});
+const int = v => Math.round(v).toLocaleString("pt-BR");
+const f1 = v => (Math.round(v*10)/10).toLocaleString("pt-BR");
+function soma(obj, meses) {
+  const t = {cost:0, clicks:0, calls:0, forms:0};
+  meses.forEach(m => { const d = obj[m]; if (d) for (const k in t) t[k] += d[k]; });
+  return t;
+}
+function tabela(el, titulo, dados, ordem, meses, mostraLig) {
+  let linhas = ordem.map(n => [n, soma(dados[n], meses)]).filter(([, t]) => t.cost > 0 || t.forms > 0);
+  const tot = {cost:0, clicks:0, calls:0, forms:0};
+  linhas.forEach(([, t]) => { for (const k in tot) tot[k] += t[k]; });
+  const cel = t => `<td>${brl(t.cost)}</td><td>${int(t.clicks)}</td>` +
+    (mostraLig ? `<td>${t.calls ? int(t.calls) : "-"}</td>` : "") +
+    `<td class="${t.forms ? "" : "zero"}"><b>${t.forms ? f1(t.forms) : "0"}</b></td>` +
+    `<td>${t.forms ? brl(t.cost / t.forms) : "-"}</td>`;
+  el.innerHTML = `<thead><tr><th>${titulo}</th><th>Investido</th><th>Cliques</th>` +
+    (mostraLig ? "<th>Ligações</th>" : "") + `<th>Formulários</th><th>Custo/formulário</th></tr></thead><tbody>` +
+    linhas.map(([n, t]) => `<tr><td>${n}</td>${cel(t)}</tr>`).join("") +
+    `<tr class="tot"><td>Total</td>${cel(tot)}</tr></tbody>`;
+}
+function seletor(el, onPick) {
+  const ops = [["Período todo", D.months]].concat(D.months.map((m, i) => [D.labels[i], [m]]));
+  const ini = ops.length - (D.labels[D.labels.length-1].endsWith("*") ? 2 : 1);   // último mês fechado
+  el.innerHTML = ops.map(([l], i) => `<button data-i="${i}">${l}</button>`).join("");
+  const pick = i => { [...el.children].forEach((b, j) => b.classList.toggle("on", j === i)); onPick(ops[i][1]); };
+  el.onclick = e => { if (e.target.dataset.i) pick(+e.target.dataset.i); };
+  pick(ini);
+}
+seletor(segCamp, ms => tabela(tCamp, "Campanha", D.camp, D.camp_ordem, ms, true));
+const ordemBair = Object.keys(D.bair).sort((a, b) => soma(D.bair[b], D.months).cost - soma(D.bair[a], D.months).cost);
+seletor(segBair, ms => tabela(tBair, "Bairro", D.bair, ordemBair, ms, false));
 
 new Chart(cMConv, { type:"bar", data:{ labels:D.labels, datasets:[
   { label:"Conversas WhatsApp", data:D.contatos_m, backgroundColor:VERDE } ]},
